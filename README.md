@@ -161,6 +161,7 @@ David Ovalle - [Github](https://github.com/Nukemenonai) / [Twitter](https://twit
 
 ## AirBnB_clone_v4 - Web dynamic
 Diana Sofía García Caicedo - [Github](https://github.com/Sofiag8) / [Twitter](https://twitter.com/Sofiiagarca)
+
 Oscar de León - [Github](https://github.com/serosc95) / [Twitter](https://twitter.com/oscardeleon95)
 
 Second part of Airbnb: Joann Vuong
