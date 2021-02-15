@@ -1,15 +1,13 @@
 $(document).ready(function () {
-  const listCheck = [];
-  const indexList = [];
-  $('input:checkbox').click(function () {
+  let listCheck = {};
+  $('input:checkbox').change(function () {
+    let id =  $(this).attr('data-id');
+    let name =  $(this).attr('data-name');
     if ($(this).is(':checked')) {
-      console.log('checkVal  ', $(this).attr('data-id'));
-      listCheck.push($(this).attr('data-id'));
+      listCheck[id] = name;
     } else {
-      console.log('descheckVal  ', $(this).attr('data-id'));
-      indexList = listCheck.indexOf($(this).attr('data-id'));
-      listCheck.splice(indexList, 1);
+      delete listCheck[id];
     }
-    console.log('List  ', listCheck);
+    console.log(listCheck);
   });
 });
