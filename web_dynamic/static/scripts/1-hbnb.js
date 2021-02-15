@@ -8,6 +8,10 @@ $(document).ready(function () {
     } else {
       delete listCheck[id];
     }
-    console.log(listCheck);
+    const list = [];
+    for (name in listCheck) {
+	list.push(listCheck[name]);
+    }
+    $('div.amenities h4').text(list.join(', '));
   });
 });
