@@ -10,7 +10,7 @@ $(document).ready(function () {
     }
     $('div.amenities h4').text('');
     for (id in listCheck) {
-      if ($('div.amenities h4').width() < 215px){
+      if ($('div.amenities h4').width() < 215){
         $('div.amenities h4').append(listCheck[id]);
         $('div.amenities h4').append(', ');
       } else {
