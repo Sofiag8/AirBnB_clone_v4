@@ -21,16 +21,17 @@ $(document).ready(function () {
   });
 
   $.ajax({
-    url: 'http://0.0.0.0:5001/api/v1/status/',
-    type: 'GET',
-    dataType: 'text',
+    url: 'http://localhost:5001/api/v1/status/',
+    //type: 'GET',
+    //dataType: 'text',
     success: function (data) {
-      if (data.status === "OK") {
+	console.log(data);
+      if (data.status === 'OK') {
         $('div#api_status').addClass('available');
       } else {
         $('div#api_status').removeClass('available');
       }
-    }
+    },
     error: function (error) {
       console.log('error', error);
     }
