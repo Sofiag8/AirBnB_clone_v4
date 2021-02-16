@@ -25,7 +25,11 @@ $(document).ready(function () {
     type: 'GET',
     dataType: 'text',
     success: function (data) {
-      console.log(data);
+      if (data.status === "OK") {
+        $('div#api_status').addClass('available');
+      } else {
+        $('div#api_status').removeClass('available');
+      }
     }
     error: function (error) {
       console.log('error', error);
