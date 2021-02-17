@@ -37,12 +37,12 @@ $(document).ready(function () {
     }
   });
 
-  function amenitiesFilter(amenityId=null){
-    $.ajax({
+  function amenitiesFilter(amenities){
+      $.ajax({
       url: 'http://localhost:5001/api/v1/places_search/',
       type: 'POST',
       contentType: 'application/json',
-      data: JSON.stringify({'amenities': amenityId}),
+      data: JSON.stringify({'amenities': amenities}),
       dataType: 'json',
       success: data => {
         $('section.places').empty();
@@ -51,7 +51,7 @@ $(document).ready(function () {
             <article>
               <div class='title_box'>
                 <h2>${place.name}</h2>
-                <div class="price_by_night">${place.price_by_night}</div>  
+                <div class="price_by_night">$${place.price_by_night}</div>
               </div>
               <div class="information">
 	        <div class="max_guest">${place.max_guest} Guest${place.max_guest != 1 ? 's' : ''} </div>
@@ -66,9 +66,8 @@ $(document).ready(function () {
       }
     });
   }
-
   $('button').click((data) => {
-    console.log(data);
-  }
-
+      amenitiesFilter(Object.keys(listCheck));
+  });
+  amenitiesFilter();
 });
